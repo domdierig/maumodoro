@@ -1,7 +1,14 @@
-body {
+.body {
     background-color: #296444;
     color: #cacaca;
-    font-family: 'Helvetica Neue', Helvetica, Arial;
+    font-family: 'Helvetica';
+    padding: 20px;
+}
+
+.body-inverted {
+    background-color: #af6292;
+    color: #cacaca;
+    font-family: 'Helvetica';
     padding: 20px;
 }
 
@@ -13,33 +20,82 @@ body {
 .item {
     display: flex;
     justify-content: center;
+    padding: 30px;
 }
 
 .title {
     font-size: 60px;
     font-weight: bold;
-    padding: 40px;
 }
 
 .header {
     font-size: 28px;
     font-weight: bold;
-    padding: 20px;
 
     .header-space {
-        padding: 0 40px 0 40px;
+        padding: 0 25px 0 25px;
     }
 
     .header-active {
-        color: #ac680f;
+        color: #af6292;
+    }
+
+    .header-active-inverted {
+        color: #296444;
+    }
+
+    .header-item {
+        cursor: pointer;
     }
 }
 
 .time {
     font-size: 78px;
     font-weight: bold;
-    padding: 20px;
 }
 
-.btns {
+.btn {
+    background-color: #af6292;
+    color: #cacaca;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px #1d4730;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 1px solid #6e3d5c;
+}
+.btn:hover {
+    box-shadow: 0px 15px 25px -5px #1d4730;
+    transform: scale(1.03);
+}
+.btn:active {
+    box-shadow: 0px 4px 8px #1d4730;
+    transform: scale(0.98);
+}
+
+.btn-inverted {
+    background-color: #296444;
+    color: #cacaca;
+    border: 0;
+    outline: 0;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px #5f354f;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 1px solid #1d4931;
+}
+.btn-inverted:hover {
+    box-shadow: 0px 15px 25px -5px #5f354f;
+    transform: scale(1.03);
+}
+.btn-inverted:active {
+    box-shadow: 0px 4px 8px #5f354f;
+    transform: scale(0.98);
 }
