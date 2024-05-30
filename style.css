@@ -85,3 +85,49 @@
     box-shadow: 0px 4px 8px var(--green-darker);
     transform: scale(0.98);
 }
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.input {
+    flex-grow: 2;
+    margin: 10px 20px 10px 10px;
+    font-size: 1.5rem;
+    border: 0;
+    background-color: var(--green);
+    color: var(--white);
+    outline: 0;
+    border-bottom: 2px solid var(--pink);
+}
+
+.btn-small {
+    background-color: var(--pink);
+    color: var(--white);
+    border: 0;
+    outline: 0;
+    padding: 10px;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px var(--green-darker);
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 1px solid var(--pink-darker);
+}
+.btn-small:hover {
+    box-shadow: 0px 15px 25px -5px var(--green-darker);
+    transform: scale(1.03);
+}
+.btn-small:active {
+    box-shadow: 0px 4px 8px var(--green-darker);
+    transform: scale(0.98);
+}
+
+img {
+    width: 1.5rem;
+    filter: invert(85%) sepia(6%) saturate(12%) hue-rotate(317deg) brightness(95%) contrast(93%);
+}

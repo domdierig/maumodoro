@@ -7,4 +7,7 @@ remove-artifacts:
 save-container:
 	docker save maumodoro:latest > maumodoro.tar
 
-build: remove-artifacts build-container save-container 
+prune-images:
+	docker image prune -f
+
+build: remove-artifacts build-container prune-images save-container 
