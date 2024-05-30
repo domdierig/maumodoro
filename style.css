@@ -117,6 +117,7 @@
     cursor: pointer;
     border-radius: 5px;
     border-bottom: 1px solid var(--pink-darker);
+    line-height: 0;
 }
 .btn-small:hover {
     box-shadow: 0px 15px 25px -5px var(--green-darker);
