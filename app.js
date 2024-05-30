@@ -9,6 +9,9 @@ class Timer {
         this.titleElement = document.getElementById('title');
 
         this.counter = 0;
+        this.running = false;
+        this.time = 0;
+        this.mode = 'work';
         this.setTime(25);
 
         this.addEventListeners();
