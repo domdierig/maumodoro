@@ -1,20 +1,17 @@
-const startButton = document.getElementById('start-btn');
-const headerItemWork = document.getElementById('header-item-work');
-const headerItemBreak = document.getElementById('header-item-break');
-const headerItemLongBreak = document.getElementById('header-item-long-break');
-
-function updateHeaderItemActive(item) {
-    headerItemWork.classList.remove('header-active');
-    headerItemBreak.classList.remove('header-active');
-    headerItemLongBreak.classList.remove('header-active');
-    item.classList.add('header-active');
-}
-
 class Timer {
     constructor() {
-        this.counter = 0;
+        this.startButton = document.getElementById('start-btn');
+        this.headerItemWork = document.getElementById('header-item-work');
+        this.headerItemBreak = document.getElementById('header-item-break');
+        this.headerItemLongBreak = document.getElementById('header-item-long-break');
 
+        this.timeElement = document.getElementById('time');
+        this.titleElement = document.getElementById('title');
+
+        this.counter = 0;
         this.setTime(25);
+
+        this.addEventListeners();
     }
 
     setTime(time) {
@@ -52,7 +49,7 @@ class Timer {
 
             this.mode = 'break';
             this.setTime(5);
-            updateHeaderItemActive(headerItemBreak);
+            this.updateHeaderItemActive(headerItemBreak);
         } else if (this.mode === 'break') {
             const audio = new Audio('./work.mp3');
             audio.volume = 1;
@@ -60,7 +57,7 @@ class Timer {
 
             this.mode = 'work';
             this.setTime(25);
-            updateHeaderItemActive(headerItemWork);
+            this.updateHeaderItemActive(headerItemWork);
         }
     }
 
@@ -68,11 +65,8 @@ class Timer {
         const minutes = Math.floor(this.time / 60);
         const seconds = this.time % 60;
 
-        const timeElement = document.getElementById('time');
-        const titleElement = document.getElementById('title');
-
-        timeElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-        titleElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        this.timeElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        this.titleElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
 
     updateCounter() {
@@ -82,25 +76,34 @@ class Timer {
             counterElement.innerHTML = `Maumodoro #${this.counter}`;
         }
     }
+
+    updateHeaderItemActive(item) {
+        this.headerItemWork.classList.remove('header-active');
+        this.headerItemBreak.classList.remove('header-active');
+        this.headerItemLongBreak.classList.remove('header-active');
+        item.classList.add('header-active');
+    }
+
+    addEventListeners() {
+        this.startButton.addEventListener('click', () => {
+            this.start();
+        });
+
+        this.headerItemWork.addEventListener('click', () => {
+            this.setTime(25);
+            this.updateHeaderItemActive(this.headerItemWork);
+        });
+
+        this.headerItemBreak.addEventListener('click', () => {
+            this.setTime(5);
+            this.updateHeaderItemActive(this.headerItemBreak);
+        });
+
+        this.headerItemLongBreak.addEventListener('click', () => {
+            this.setTime(15);
+            this.updateHeaderItemActive(this.headerItemLongBreak);
+        });
+    }
 }
 
 const timer = new Timer();
-
-startButton.addEventListener('click', function () {
-    timer.start();
-});
-
-headerItemWork.addEventListener('click', function () {
-    timer.setTime(25);
-    updateHeaderItemActive(headerItemWork);
-});
-
-headerItemBreak.addEventListener('click', function () {
-    timer.setTime(5);
-    updateHeaderItemActive(headerItemBreak);
-});
-
-headerItemLongBreak.addEventListener('click', function () {
-    timer.setTime(15);
-    updateHeaderItemActive(headerItemLongBreak);
-});
