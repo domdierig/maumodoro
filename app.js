@@ -12,8 +12,8 @@ class Timer {
         this.running = false;
         this.time = 0;
         this.mode = 'work';
-        this.setTime(25);
 
+        this.setTime(25);
         this.addEventListeners();
     }
 
@@ -27,14 +27,16 @@ class Timer {
 
     start() {
         if (!this.running) {
-            this.running = true;
             this.updateCounter();
 
+            this.running = true;
             this.time--;
             this.updateTime();
+
             this.interval = setInterval(() => {
                 this.time--;
                 this.updateTime();
+
                 if (this.time === 0) {
                     this.stop();
                 }
@@ -45,6 +47,7 @@ class Timer {
     stop() {
         this.running = false;
         clearInterval(this.interval);
+
         if (this.mode === 'work') {
             const audio = new Audio('./break.mp3');
             audio.volume = 1;
