@@ -10,6 +10,7 @@ COPY style.css /usr/share/nginx/html
 COPY break.mp3 /usr/share/nginx/html
 COPY work.mp3 /usr/share/nginx/html
 COPY plus.svg /usr/share/nginx/html
+COPY favicon.ico /usr/share/nginx/html
 
 EXPOSE 80
 
