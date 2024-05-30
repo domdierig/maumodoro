@@ -1,15 +1,28 @@
-.body {
-    background-color: #296444;
-    color: #cacaca;
-    font-family: 'Helvetica';
-    padding: 20px;
+:root {
+    --green: #296444;
+    --green-darker: #1d4730;
+    --white: #cacaca;
+    --pink: #af6292;
+    --pink-darker: #5f354f;
 }
 
-.body-inverted {
-    background-color: #af6292;
-    color: #cacaca;
+.body {
+    background-color: var(--green);
+    color: var(--white);
     font-family: 'Helvetica';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container {
+    border: 3px solid var(--pink);
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px var(--green-darker);
+    width: 40rem;
+    margin: 20px 0 0 0;
 }
 
 .app {
@@ -20,7 +33,7 @@
 .item {
     display: flex;
     justify-content: center;
-    padding: 30px;
+    padding: 20px;
 }
 
 .title {
@@ -37,11 +50,7 @@
     }
 
     .header-active {
-        color: #af6292;
-    }
-
-    .header-active-inverted {
-        color: #296444;
+        color: var(--pink);
     }
 
     .header-item {
@@ -55,47 +64,24 @@
 }
 
 .btn {
-    background-color: #af6292;
-    color: #cacaca;
+    background-color: var(--pink);
+    color: var(--white);
     border: 0;
     outline: 0;
     padding: 20px;
     font-size: 2rem;
     font-weight: bold;
-    box-shadow: 0px 5px 10px #1d4730;
+    box-shadow: 0px 5px 10px var(--green-darker);
     transition: all 0.3s;
     cursor: pointer;
     border-radius: 5px;
-    border-bottom: 1px solid #6e3d5c;
+    border-bottom: 1px solid var(--pink-darker);
 }
 .btn:hover {
-    box-shadow: 0px 15px 25px -5px #1d4730;
+    box-shadow: 0px 15px 25px -5px var(--green-darker);
     transform: scale(1.03);
 }
 .btn:active {
-    box-shadow: 0px 4px 8px #1d4730;
-    transform: scale(0.98);
-}
-
-.btn-inverted {
-    background-color: #296444;
-    color: #cacaca;
-    border: 0;
-    outline: 0;
-    padding: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    box-shadow: 0px 5px 10px #5f354f;
-    transition: all 0.3s;
-    cursor: pointer;
-    border-radius: 5px;
-    border-bottom: 1px solid #1d4931;
-}
-.btn-inverted:hover {
-    box-shadow: 0px 15px 25px -5px #5f354f;
-    transform: scale(1.03);
-}
-.btn-inverted:active {
-    box-shadow: 0px 4px 8px #5f354f;
+    box-shadow: 0px 4px 8px var(--green-darker);
     transform: scale(0.98);
 }
