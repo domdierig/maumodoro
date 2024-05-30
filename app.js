@@ -69,7 +69,10 @@ class Timer {
         const seconds = this.time % 60;
 
         const timeElement = document.getElementById('time');
+        const titleElement = document.getElementById('title');
+
         timeElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        titleElement.innerHTML = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
 
     updateCounter() {
