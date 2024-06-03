@@ -6,6 +6,6 @@ A small Pomodoro timer app that I built for my wife for personal use. I deployed
 
 [Soundfiles Source](https://mixkit.co/free-sound-effects/alarm/)
 
-[Button icons Source](https://www.svgrepo.com/)
+[Button Icons Source](https://www.svgrepo.com/)
 
 [Favicon Generator](https://favicon.io/)
