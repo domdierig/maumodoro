@@ -96,14 +96,20 @@
 
 .input {
     flex-grow: 2;
-    margin: 10px 20px 10px 10px;
+    margin: 5px 20px 5px 10px;
     font-size: 1.5rem;
     border: 0;
     background-color: var(--green);
     color: var(--white);
     outline: 0;
+}
+
+.input-task {
     border-bottom: 2px solid var(--pink);
 }
+
+/* .input-display-task {
+} */
 
 .btn-small {
     background-color: var(--pink);
@@ -131,4 +137,14 @@
 img {
     width: 1.5rem;
     filter: invert(85%) sepia(6%) saturate(12%) hue-rotate(317deg) brightness(95%) contrast(93%);
+}
+
+.task-list {
+    flex-direction: column;
+}
+
+.task-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
 }

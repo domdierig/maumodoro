@@ -55,7 +55,7 @@ class Timer {
 
             this.mode = 'break';
             this.setTime(5);
-            this.updateHeaderItemActive(headerItemBreak);
+            this.updateHeaderItemActive(this.headerItemBreak);
         } else if (this.mode === 'break') {
             const audio = new Audio('./work.mp3');
             audio.volume = 1;
@@ -63,7 +63,7 @@ class Timer {
 
             this.mode = 'work';
             this.setTime(25);
-            this.updateHeaderItemActive(headerItemWork);
+            this.updateHeaderItemActive(this.headerItemWork);
         }
     }
 
@@ -112,4 +112,45 @@ class Timer {
     }
 }
 
+class Tasks {
+    constructor() {
+        this.addTaskButton = document.getElementById('add-task-btn');
+        this.taskList = document.getElementById('task-list');
+        this.taskInput = document.getElementById('task-input');
+        this.taskListItemTemplate = document.getElementById('task-list-item-template');
+
+        this.addEventListeners();
+    }
+
+    addEventListeners() {
+        this.addTaskButton.addEventListener('click', () => {
+            this.addTask();
+        });
+    }
+
+    addTask() {
+        const task = this.taskInput.value;
+        this.taskInput.value = '';
+
+        if (task.length > 0) {
+            console.log(task);
+
+            const newItem = this.taskListItemTemplate.cloneNode(true);
+
+            // update new Item with text,
+            // set ID of item
+
+            this.taskList.appendChild(newItem);
+        }
+
+        // if (task) {
+        //     const taskElement = document.createElement('li');
+        //     taskElement.innerHTML = task;
+        //     this.taskList.appendChild(taskElement);
+        //     this.taskInput.value = '';
+        // }
+    }
+}
+
 const timer = new Timer();
+const tasks = new Tasks();

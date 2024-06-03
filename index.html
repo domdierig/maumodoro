@@ -26,10 +26,15 @@
 				<div class="item title">Aufgaben</div>
 				<div class="item">
 					<div class="input-container">
-						<input class="input" placeholder="eine Aufgabe hinzufügen..." type="text">
-						<button class="btn-small"><img src="./plus.svg"></button>
+						<input id="task-input" class="input input-task" placeholder="eine Aufgabe hinzufügen..." type="text">
+						<button id="add-task-btn" class="btn-small"><img src="./plus.svg"></button>
+					</div>					
+				</div>
+				<div id="task-list" class="item task-list">
+					<div id="task-list-item-template" class="task-list-item">
+						<input class="input" readonly>
+						<button class="btn-small"><img src="./check.svg"></button>
 					</div>
-					
 				</div>
 			</div>
 		</div>
