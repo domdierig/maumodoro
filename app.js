@@ -119,6 +119,8 @@ class Tasks {
         this.taskInput = document.getElementById('task-input');
         this.taskListItemTemplate = document.getElementById('task-list-item-template');
 
+        this.taskElements = [];
+
         this.addEventListeners();
     }
 
@@ -133,22 +135,24 @@ class Tasks {
         this.taskInput.value = '';
 
         if (task.length > 0) {
-            console.log(task);
-
             const newItem = this.taskListItemTemplate.cloneNode(true);
 
-            // update new Item with text,
-            // set ID of item
+            newItem.classList.remove('hidden');
+            newItem.id = `task-${this.taskElements.length}`;
 
+            newItem.childNodes[1].value = task;
+
+            newItem.childNodes[3].addEventListener('click', () => {
+                this.resolveTask(newItem);
+            });
+
+            this.taskElements.push(newItem);
             this.taskList.appendChild(newItem);
         }
+    }
 
-        // if (task) {
-        //     const taskElement = document.createElement('li');
-        //     taskElement.innerHTML = task;
-        //     this.taskList.appendChild(taskElement);
-        //     this.taskInput.value = '';
-        // }
+    resolveTask(taskElement) {
+        taskElement.childNodes[1].classList.add('strike-through');
     }
 }
 

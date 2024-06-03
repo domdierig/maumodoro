@@ -4,6 +4,7 @@
     --white: #cacaca;
     --pink: #af6292;
     --pink-darker: #5f354f;
+    --grey: #aeaeae;
 }
 
 .body {
@@ -147,4 +148,13 @@ img {
     display: flex;
     justify-content: space-between;
     padding: 10px 0 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.strike-through {
+    text-decoration: line-through;
+    color: var(--grey);
 }
