@@ -156,5 +156,8 @@ class Tasks {
     }
 }
 
+class Log {}
+
 const timer = new Timer();
 const tasks = new Tasks();
+const log = new Log();
